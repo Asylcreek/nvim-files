@@ -5,9 +5,21 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+  config = function ()
+    local wk = require "which-key"
+
+    wk.setup()
+
+    wk.register ({
+      f = { name = "Find" }
+    }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      b = { name = "Buffers" }
+    }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      g = { name = "Git" }
+    }, {mode = "n", prefix = "<leader>" })
+  end
 }
