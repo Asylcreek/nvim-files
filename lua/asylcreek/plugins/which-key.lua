@@ -21,5 +21,9 @@ return {
     wk.register ({
       g = { name = "Git" }
     }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      h = { name = "Harpoon" }
+    }, {mode = "n", prefix = "<leader>" })
   end
 }
