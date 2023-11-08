@@ -25,5 +25,9 @@ return {
     wk.register ({
       h = { name = "Harpoon" }
     }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      r = { name = "Resession" }
+    }, {mode = "n", prefix = "<leader>" })
   end
 }
