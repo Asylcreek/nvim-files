@@ -29,5 +29,9 @@ return {
     wk.register ({
       r = { name = "Resession" }
     }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      l = { name = "LSP" }
+    }, {mode = "n", prefix = "<leader>" })
   end
 }
