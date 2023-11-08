@@ -33,5 +33,9 @@ return {
     wk.register ({
       l = { name = "LSP" }
     }, {mode = "n", prefix = "<leader>" })
+
+    wk.register ({
+      x = { name = "Trouble" }
+    }, {mode = "n", prefix = "<leader>" })
   end
 }
