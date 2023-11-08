@@ -2,6 +2,32 @@ return {
 	'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	config = function ()
+    local telescope = require "telescope"
+    local actions = require "telescope.actions"
+
+    telescope.setup {
+      defaults = {
+        sorting_strategy = "ascending",
+        path_display = { "truncate" },
+        layout_config = {
+          horizontal = { prompt_position = "top", results_position = "top", preview_width = 0.55 },
+          vertical = { mirror = false },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
+        },
+        mappings = {
+          i = {
+            ["<C-n>"] = actions.cycle_history_next,
+            ["<C-p>"] = actions.cycle_history_prev,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+          },
+          n = { q = actions.close },
+        }
+      }
+    }
+
 		local builtin = require('telescope.builtin')
 
 		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
@@ -23,7 +49,9 @@ return {
 		vim.keymap.set('n', '<leader>gC', function() builtin.git_bcommits { use_file_path = true } end, { desc = "Git commits for current file" })
 		vim.keymap.set('n', '<leader>gt', function() builtin.git_status { use_file_path = true } end, { desc = "Git status" })
 
+
+    telescope.load_extension "yank_history"
+
 		return vim
 	end
-	
 }
