@@ -24,8 +24,9 @@ return {
 		opts = function()
 			local cmp = require "cmp"
 			local snip_status_ok, luasnip = pcall(require, "luasnip")
-			local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+
 			if not snip_status_ok then return end
+
 			local border_opts = {
 				border = "rounded",
 				winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
@@ -40,11 +41,7 @@ return {
 				enabled = true,
 				preselect = cmp.PreselectMode.None,
 				formatting = {
-					format = lspkind.cmp_format({
-						mode = 'symbol', -- show only symbol annotations
-						maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-						ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-					})
+					fields = {"abbr", "menu", "kind"}
 				},
 				snippet = {
 					expand = function(args) luasnip.lsp_expand(args.body) end,
