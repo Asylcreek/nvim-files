@@ -45,4 +45,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.g.mapleader = " "
