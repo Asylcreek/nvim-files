@@ -34,4 +34,15 @@ vim.opt.cmdheight = 1
 
 vim.opt.clipboard = ""
 
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.copyindent = true
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.fileencoding = "utf-8"
+vim.opt.fillchars = { eob = " " }
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil
+
 vim.g.mapleader = " "
