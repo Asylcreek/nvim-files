@@ -26,6 +26,7 @@
   "resession.nvim": { "branch": "master", "commit": "b0107dc2cec1f24cf5a90a794a652eb66178ad8e" },
   "smart-splits.nvim": { "branch": "master", "commit": "c8a9173d70cbbd1f6e4a414e49e31df2b32a1362" },
   "substitute.nvim": { "branch": "main", "commit": "cf35db50188f3d7de624ae391c9bb9f2e9de5610" },
+  "telescope-file-browser.nvim": { "branch": "master", "commit": "3044ff9e38d1ed8d7818d72d9f951ed9d1b0563d" },
   "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
   "template-string.nvim": { "branch": "main", "commit": "5559125aba8499695eb23c3ff2434a13fb05e304" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
