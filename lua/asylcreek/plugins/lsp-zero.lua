@@ -6,6 +6,7 @@ return {
   dependencies = {
     { 'neovim/nvim-lspconfig' },
   },
+  event = "BufEnter",
   config = function()
     local lsp_zero = require('lsp-zero')
 
@@ -47,7 +48,7 @@ return {
       servers = {
         ['lua_ls'] = { 'lua' },
         ['stylua'] = { 'lua' },
-        ['prettier'] = { 'javascript', 'typescript', 'css', 'html', },
+        ['prettier'] = { 'javascript', 'typescript', 'css', 'html', "typescriptreact", "javascriptreact" },
         ['gopls'] = { 'go' },
         ['rust_analyzer'] = { 'rust' },
       }

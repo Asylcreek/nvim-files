@@ -1,5 +1,6 @@
 return {
   "mrjones2014/smart-splits.nvim",
+  event = "BufEnter",
   config = function()
     local smartsplits = require "smart-splits"
 
