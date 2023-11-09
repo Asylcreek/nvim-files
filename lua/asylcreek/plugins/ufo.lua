@@ -2,6 +2,7 @@ return {
   'kevinhwang91/nvim-ufo',
   dependencies = 'kevinhwang91/promise-async',
   event = "BufEnter",
+  enabled = false,
   config = function()
     require('ufo').setup({
       preview = {

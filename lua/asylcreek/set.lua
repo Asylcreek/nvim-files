@@ -4,6 +4,7 @@ vim.opt.number = true
 vim.opt.spell = true
 vim.opt.wrap = false
 
+
 vim.opt.showtabline = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -39,7 +40,7 @@ vim.opt.copyindent = true
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
-vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
