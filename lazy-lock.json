@@ -36,6 +36,7 @@
   "telescope-file-browser.nvim": { "branch": "master", "commit": "3044ff9e38d1ed8d7818d72d9f951ed9d1b0563d" },
   "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
   "template-string.nvim": { "branch": "main", "commit": "5559125aba8499695eb23c3ff2434a13fb05e304" },
+  "toggleterm.nvim": { "branch": "main", "commit": "faee9d60428afc7857e0927fdc18daa6c409fa64" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "undotree": { "branch": "master", "commit": "170aa9e516b6926e6bddfe21bbf01f2283a00e7d" },
   "vim-wakatime": { "branch": "master", "commit": "3c6c5bf17f4ae6c53396667ce3405df02a80b894" },
