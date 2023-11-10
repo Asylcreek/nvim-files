@@ -5,7 +5,7 @@ return {
     local gs = require("gitsigns")
 
     gs.setup({
-      current_line_blame = true,
+      -- current_line_blame = true,
 
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -41,7 +41,7 @@ return {
         map('n', '<leader>gbr', gs.reset_buffer, { desc = "Reset buffer" })
         map('n', '<leader>ghp', gs.preview_hunk, { desc = "Preview hunk" })
         map('n', '<leader>gB', function() gs.blame_line { full = true } end, { desc = "Show full git blame" })
-        map('n', '<leader>gb', gs.toggle_current_line_blame, { desc = "Toggle current line blame" })
+        map('n', '<leader>glb', gs.toggle_current_line_blame, { desc = "Toggle current line blame" })
         map('n', '<leader>gd', gs.diffthis, { desc = "Show diff" })
         map('n', '<leader>gD', function() gs.diffthis('~') end, { desc = "Show diff from HEAD" })
         map('n', '<leader>gd', gs.toggle_deleted, { desc = "Toggle git deleted" })
