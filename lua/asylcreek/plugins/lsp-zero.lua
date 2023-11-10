@@ -63,5 +63,16 @@ return {
 				timeout_ms = 1000,
 			},
 		})
+
+		lsp_zero.set_server_config({
+			capabilities = {
+				textDocument = {
+					foldingRange = {
+						dynamicRegistration = false,
+						lineFoldingOnly = true,
+					},
+				},
+			},
+		})
 	end,
 }
