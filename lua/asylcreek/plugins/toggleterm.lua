@@ -4,9 +4,25 @@ return {
   config = function()
     local Terminal = require('toggleterm.terminal').Terminal
 
-    local lazygit  = Terminal:new({
+    -- local function exec(command)
+    --   local f = io.popen(command)
+    --
+    --   if f ~= nil then
+    --     local l = f:read("*a")
+    --
+    --     f:close()
+    --
+    --     return l
+    --   end
+    -- end
+    --
+    --
+    -- local git_dir = exec("git rev-parse --show-toplevel")
+
+    local lazygit = Terminal:new({
+      -- cmd = ("lazygit --worktree=%s/"):format(git_dir),
       cmd = "lazygit",
-      dir = "git_dir",
+      dir = ".",
       direction = "float",
     })
 
