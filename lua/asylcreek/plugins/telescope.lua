@@ -46,6 +46,40 @@ return {
 
 		local builtin = require("telescope.builtin")
 
+		vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Go to definition", buffer = bufnr, remap = false })
+		vim.keymap.set(
+			"n",
+			"gI",
+			builtin.lsp_implementations,
+			{ desc = "Go to implementation", buffer = bufnr, remap = false }
+		)
+		vim.keymap.set(
+			"n",
+			"gT",
+			builtin.lsp_definitions,
+			{ desc = "Go to type definitions", buffer = bufnr, remap = false }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>lr",
+			builtin.lsp_references,
+			{ desc = "Show references", buffer = bufnr, remap = false }
+		)
+		vim.keymap.set("n", "<leader>ls", function()
+			vim.ui.input({ prompt = "Symbol Query: (leave empty for word under cursor)" }, function(query)
+				if query then
+					-- word under cursor if given query is empty
+					if query == "" then
+						query = vim.fn.expand("<cword>")
+					end
+					require("telescope.builtin").lsp_workspace_symbols({
+						query = query,
+						prompt_title = ("Find word (%s)"):format(query),
+					})
+				end
+			end)
+		end, { desc = "Show workspace symbols", buffer = bufnr, remap = false })
+
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 		vim.keymap.set("n", "<leader>fF", function()
 			builtin.find_files({ hidden = true, no_ignore = true })
