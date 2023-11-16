@@ -8,7 +8,7 @@ return {
 		{ "lukas-reineke/lsp-format.nvim" },
 		{ "ray-x/lsp_signature.nvim", enabled = true },
 	},
-	event = "BufEnter",
+	event = "VeryLazy",
 	config = function()
 		local lsp_zero = require("lsp-zero")
 		local lsp_format = require("lsp-format")

@@ -1,8 +1,9 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
+  event = "BufEnter",
   build = ":TSUpdate",
   config = function()
-    require "nvim-treesitter.configs".setup {
+    require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "javascript",
         "typescript",
@@ -33,7 +34,7 @@ return {
       auto_install = true,
 
       highlight = {
-        enable = true
+        enable = true,
       },
 
       indent = { enable = true },
@@ -43,6 +44,6 @@ return {
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         max_file_lines = nil, -- Do not enable for files with more than n lines, int
       },
-    }
-  end
+    })
+  end,
 }

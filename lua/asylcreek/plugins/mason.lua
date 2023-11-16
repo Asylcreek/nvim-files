@@ -1,16 +1,19 @@
 return {
-	{ "williamboman/mason.nvim",
+	{
+		"williamboman/mason.nvim",
+		event = "VeryLazy",
 		config = function()
-		require"mason".setup{}
-		end
+			require("mason").setup({})
+		end,
 	},
 
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = "VeryLazy",
 		config = function()
 			local lsp_zero = require("lsp-zero")
 
-			require"mason-lspconfig".setup{
+			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
 					"tsserver",
@@ -20,13 +23,13 @@ return {
 					"jsonls",
 					"docker_compose_language_service",
 					"eslint",
-					"emmet_ls"
+					"emmet_ls",
 				},
 				handlers = {
 					lsp_zero.default_setup,
 				},
-			}
-		end
+			})
+		end,
 	},
 
 	{
@@ -36,7 +39,7 @@ return {
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 		config = function()
-      require("asylcreek.plugins.null-ls")
+			require("asylcreek.plugins.null-ls")
 		end,
-	}
+	},
 }

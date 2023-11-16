@@ -1,11 +1,11 @@
 return {
   "gbprod/yanky.nvim",
-  event = "BufEnter",
+  event = "VeryLazy",
   config = function()
-    require("yanky").setup {
+    require("yanky").setup({
       ring = { ignore_registers = { "_", "+" } },
       system_clipboard = { sync_with_ring = false },
-    }
+    })
 
     vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "Paste after cursor" })
 

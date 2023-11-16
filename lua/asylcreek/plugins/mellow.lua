@@ -1,6 +1,7 @@
 return {
-	'kvrohit/mellow.nvim',
+	"kvrohit/mellow.nvim",
+	lazy = false,
 	config = function()
-		vim.cmd [[colorscheme mellow]]
-	end
+		vim.cmd([[colorscheme mellow]])
+	end,
 }
