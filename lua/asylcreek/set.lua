@@ -4,7 +4,6 @@ vim.opt.number = true
 vim.opt.spell = true
 vim.opt.wrap = false
 
-
 vim.opt.showtabline = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -17,7 +16,7 @@ vim.opt.smartcase = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -45,9 +44,10 @@ vim.opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", fo
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-vim.opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil
+vim.opt.foldcolumn = vim.fn.has("nvim-0.9") == 1 and "1" or nil
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.splitkeep = "cursor"
 
 vim.g.mapleader = " "
