@@ -1,6 +1,6 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
-  event = "VeryLazy",
+  event = "BufEnter",
   config = function()
     local null_ls = require("null-ls")
 
