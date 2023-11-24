@@ -1,17 +1,36 @@
 return {
-  "nvim-telescope/telescope-file-browser.nvim",
-  keys = { { "<leader>pf" } },
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  "echasnovski/mini.files",
+  version = "*",
   config = function()
-    -- vim.api.nvim_set_keymap("n", "<space>pf", ":Telescope file_browser<CR>", { noremap = true })
+    local minifiles = require("mini.files")
+    local miniUtils = require("asylcreek.utils.minifiles")
 
-    -- open file_browser with the path of the current buffer
-    vim.api.nvim_set_keymap(
-      "n",
-      "<space>pf",
-      ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      { noremap = true, desc = "Open file browser" }
-    )
+    minifiles.setup({
+      content = {
+        sort = miniUtils.filter_hidden,
+      },
+      mappings = {
+        synchronize = "<leader>w",
+        go_in_plus = "l",
+        go_in = "L",
+      },
+      windows = {
+        preview = true,
+        width_preview = 120,
+      },
+    })
+
+    vim.keymap.set("n", "<leader>pf", function()
+      if vim.bo.ft == "minifiles" then
+        minifiles.close()
+      else
+        local file = vim.api.nvim_buf_get_name(0)
+        local file_exists = vim.fn.filereadable(file) ~= 0
+        minifiles.open(file_exists and file or nil)
+        minifiles.reveal_cwd()
+      end
+    end, { desc = "Open file browser" })
+
     return vim
   end,
 }

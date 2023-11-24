@@ -1,22 +1,7 @@
-local resession = require("resession")
+require("asylcreek.autocmds.resession")
+require("asylcreek.autocmds.minifiles")
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    -- Only load the session if nvim was started with no args
-    if vim.fn.argc(-1) == 0 then
-      -- Save these to a different directory, so our manual sessions don't get polluted
-      resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
-    end
-  end,
-})
-
--- Save session before exiting
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
-  end,
-})
-
+-- Open file to last location before exiting
 vim.api.nvim_create_autocmd("BufRead", {
   callback = function(opts)
     vim.api.nvim_create_autocmd("BufWinEnter", {
