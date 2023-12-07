@@ -48,13 +48,13 @@ return {
 			neotest.watch.stop()
 		end, { desc = "Stop watching tests" })
 
-		vim.keymap.set("n", "<leader>tst", function()
+		vim.keymap.set("n", "<leader>tos", function()
 			neotest.summary.toggle()
 		end, { desc = "Toggle show test summary" })
 
-		vim.keymap.set("n", "<leader>tos", function()
+		vim.keymap.set("n", "<leader>too", function()
 			neotest.output.open({ enter = true, quiet = true })
-		end, { desc = "Toggle output panel" })
+		end, { desc = "Toggle output window" })
 
 		vim.keymap.set("n", "<leader>top", function()
 			neotest.output_panel.toggle()
