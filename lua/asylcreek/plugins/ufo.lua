@@ -1,44 +1,24 @@
 return {
   "kevinhwang91/nvim-ufo",
-  dependencies = "kevinhwang91/promise-async",
+  dependencies = { "kevinhwang91/promise-async", "luukvbaal/statuscol.nvim" },
   event = "VeryLazy",
-  enabled = false,
   config = function()
-    require("ufo").setup({
-      preview = {
-        mappings = {
-          scrollB = "<C-b>",
-          scrollF = "<C-f>",
-          scrollU = "<C-u>",
-          scrollD = "<C-d>",
-        },
-      },
-      provider_selector = function(_, filetype, buftype)
-        local function handleFallbackException(bufnr, err, providerName)
-          if type(err) == "string" and err:match("UfoFallbackException") then
-            return require("ufo").getFolds(bufnr, providerName)
-          else
-            return require("promise").reject(err)
-          end
-        end
+    local builtin = require("statuscol.builtin")
 
-        return (filetype == "" or buftype == "nofile") and "indent" -- only use indent until a file is opened
-            or function(bufnr)
-              return require("ufo")
-                  .getFolds(bufnr, "lsp")
-                  :catch(function(err)
-                    return handleFallbackException(bufnr, err, "treesitter")
-                  end)
-                  :catch(function(err)
-                    return handleFallbackException(bufnr, err, "indent")
-                  end)
-            end
-      end,
+    require("statuscol").setup({
+      setopt = true,
+      relculright = false,
+      segments = {
+        {
+          text = { builtin.foldfunc, " " },
+          condition = { builtin.not_empty, true, builtin.not_empty },
+          click = "v:lua.ScFa",
+        },
+        { text = { "%s" },                      click = "v:lua.ScSa" },
+        { text = { builtin.lnumfunc, " ", " " } },
+      },
     })
 
-    vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-    vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-
-    return vim
+    require("ufo").setup()
   end,
 }

@@ -44,7 +44,7 @@ vim.opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", fo
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
-vim.opt.foldcolumn = vim.fn.has("nvim-0.9") == 1 and "1" or nil
+vim.opt.foldcolumn = "1" -- '0' is not bad
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
