@@ -7,7 +7,7 @@ return {
 
       resession.setup({
         autosave = {
-          enabled = true,
+          enabled = vim.fn.argc(-1) == 0,
           interval = 30,
           notify = false,
         },
