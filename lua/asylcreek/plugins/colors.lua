@@ -1,54 +1,59 @@
 return {
   {
     "kvrohit/mellow.nvim",
-    lazy = false,
-    config = function()
-      -- vim.cmd([[colorscheme mellow]])
-    end,
+    lazy = "VeryLazy",
   },
   {
     "olimorris/onedarkpro.nvim",
-    lazy = false,
-    config = function()
-      require("onedarkpro").setup({
-        options = {
-          transparency = true,
-          terminal_colors = false,
-        },
-      })
-
-      -- vim.cmd("colorscheme onedark_dark")
-    end,
+    lazy = "VeryLazy",
+    opts = {
+      options = {
+        transparency = true,
+        terminal_colors = false,
+      },
+    },
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    config = function()
-      require("tokyonight").setup({
-        style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        light_style = "day", -- The theme is used when the background is set to light
-        transparent = true, -- Enable this to disable setting the background color
-      })
-    end,
+    lazy = "VeryLazy",
+    opts = {
+      style = "storm",  -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+      light_style = "day", -- The theme is used when the background is set to light
+      transparent = true, -- Enable this to disable setting the background color
+    },
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
-    config = function()
-      require("kanagawa").setup({
-        transparent = true,
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = "none",
-              },
+    lazy = "VeryLazy",
+    opts = {
+      transparent = true,
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
             },
           },
         },
-      })
-
-      vim.cmd("colorscheme kanagawa-wave")
-    end,
+      },
+    },
+    {
+      "EdenEast/nightfox.nvim",
+      lazy = false,
+      opts = {
+        options = {
+          transparent = true,
+        },
+        groups = {
+          all = {
+            DiagnosticVirtualTextInfo = { bg = "none" },
+            DiagnosticVirtualTextError = { bg = "none" },
+            DiagnosticVirtualTextWarn = { bg = "none" },
+            DiagnosticVirtualTextHint = { bg = "none" },
+            DiagnosticVirtualTextOk = { bg = "none" },
+          },
+        },
+      },
+    },
   },
 }
