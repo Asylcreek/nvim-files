@@ -16,33 +16,37 @@ return {
   {
     "rebelot/kanagawa.nvim",
     lazy = "VeryLazy",
-    opts = {
-      transparent = true,
-      colors = {
-        theme = {
-          all = {
-            ui = {
-              bg_gutter = "red",
+    config = function()
+      local kanagawa = require("kanagawa")
+
+      kanagawa.setup({
+        transparent = false,
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
             },
           },
         },
+      })
+    end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = "VeryLazy",
+    opts = {
+      options = {
+        transparent = true,
       },
-    },
-    {
-      "EdenEast/nightfox.nvim",
-      lazy = "VeryLazy",
-      opts = {
-        options = {
-          transparent = true,
-        },
-        groups = {
-          all = {
-            DiagnosticVirtualTextInfo = { bg = "none" },
-            DiagnosticVirtualTextError = { bg = "none" },
-            DiagnosticVirtualTextWarn = { bg = "none" },
-            DiagnosticVirtualTextHint = { bg = "none" },
-            DiagnosticVirtualTextOk = { bg = "none" },
-          },
+      groups = {
+        all = {
+          DiagnosticVirtualTextInfo = { bg = "none" },
+          DiagnosticVirtualTextError = { bg = "none" },
+          DiagnosticVirtualTextWarn = { bg = "none" },
+          DiagnosticVirtualTextHint = { bg = "none" },
+          DiagnosticVirtualTextOk = { bg = "none" },
         },
       },
     },
