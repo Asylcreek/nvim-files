@@ -51,4 +51,14 @@ return {
       },
     },
   },
+  {
+    "ramojus/mellifluous.nvim",
+    lazy = "VeryLazy",
+    opts = {
+      transparent_background = {
+        enabled = true,
+        cursor_line = false,
+      },
+    },
+  },
 }
