@@ -17,6 +17,7 @@ return {
         "gitignore",
         "json",
         "markdown",
+        "markdown_inline",
         "scss",
         "sql",
         "tsx",
