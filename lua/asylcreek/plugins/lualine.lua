@@ -142,6 +142,7 @@ return {
 
     ins_left({
       "filename",
+      path = 4,
       cond = conditions.buffer_not_empty_and_not_terminal,
       color = { fg = colors.magenta },
     })
