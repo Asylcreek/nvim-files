@@ -4,7 +4,7 @@ vim.opt.number = true
 vim.opt.spell = true
 vim.opt.wrap = false
 
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
