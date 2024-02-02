@@ -128,21 +128,21 @@ return {
       color = { fg = colors.violet },
     })
 
-    ins_left({
-      "diff",
-      -- Is it me or the symbol for modified us really weird
-      symbols = { added = "A ", modified = "M ", removed = "R " },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-    })
+    -- ins_left({
+    --   "diff",
+    --   -- Is it me or the symbol for modified us really weird
+    --   symbols = { added = "A ", modified = "● ", removed = "R " },
+    --   diff_color = {
+    --     added = { fg = colors.green },
+    --     modified = { fg = colors.orange },
+    --     removed = { fg = colors.red },
+    --   },
+    --   cond = conditions.hide_in_width,
+    -- })
 
     ins_left({
       "filename",
-      path = 4,
+      path = 1,
       cond = conditions.buffer_not_empty_and_not_terminal,
       color = { fg = colors.magenta },
     })

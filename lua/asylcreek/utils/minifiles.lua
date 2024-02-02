@@ -51,7 +51,8 @@ end
 M.map_split = function(buf_id, lhs, direction)
   local rhs = function()
     -- Make new window and set it as target
-    --    local new_target_window
+    local new_target_window
+
     vim.api.nvim_win_call(MiniFiles.get_target_window(), function()
       vim.cmd(direction .. " split")
       new_target_window = vim.api.nvim_get_current_win()
