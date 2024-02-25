@@ -1,5 +1,6 @@
 require("asylcreek.autocmds.resession")
 require("asylcreek.autocmds.minifiles")
+require("asylcreek.autocmds.terraform")
 
 -- Open file to last location before exiting
 vim.api.nvim_create_autocmd("BufRead", {
