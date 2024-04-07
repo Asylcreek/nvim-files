@@ -52,13 +52,8 @@ return {
     },
   },
   {
-    "ramojus/mellifluous.nvim",
+    "mcchrish/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
     lazy = "VeryLazy",
-    opts = {
-      transparent_background = {
-        enabled = true,
-        cursor_line = false,
-      },
-    },
   },
 }
