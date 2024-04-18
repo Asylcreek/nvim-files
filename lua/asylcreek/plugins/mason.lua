@@ -39,6 +39,19 @@ return {
               },
             })
           end,
+          cssmodules_ls = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.cssmodules_ls.setup({
+              filetypes = {
+                "javascript",
+                "javascriptreact",
+                "typescript",
+                "typescriptreact",
+                "scss",
+                "css",
+              },
+            })
+          end,
         },
       })
     end,
