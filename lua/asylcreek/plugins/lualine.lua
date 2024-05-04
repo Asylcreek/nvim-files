@@ -22,7 +22,7 @@ return {
         section_separators = { left = "", right = "" },
         theme = "ayu",
       },
-      sections = {
+      tabline = {
         lualine_a = { "mode" },
         lualine_b = {
           "branch",
@@ -64,6 +64,14 @@ return {
           "progress",
         },
         lualine_z = { "location" },
+      },
+      sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
       },
     })
   end,
