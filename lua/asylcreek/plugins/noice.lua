@@ -14,6 +14,8 @@ return {
       presets = {
         bottom_search = false,
         lsp_doc_border = true,
+        long_message_to_split = true,
+        cmdline_output_to_split = true,
       },
       cmdline = {
         view = "cmdline_popup",
@@ -71,6 +73,9 @@ return {
             style = "rounded",
             padding = { 0, 1 },
           },
+        },
+        split = {
+          enter = true,
         },
       },
     })
