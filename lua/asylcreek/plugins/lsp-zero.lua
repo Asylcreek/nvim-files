@@ -6,13 +6,13 @@ return {
   dependencies = {
     { "neovim/nvim-lspconfig" },
     { "lukas-reineke/lsp-format.nvim" },
-    { "ray-x/lsp_signature.nvim",     enabled = true },
+    -- { "ray-x/lsp_signature.nvim",     enabled = true },
   },
   event = "BufEnter",
   config = function()
     local lsp_zero = require("lsp-zero")
     local lsp_format = require("lsp-format")
-    local lsp_signature = require("lsp_signature")
+    -- local lsp_signature = require("lsp_signature")
 
     lsp_zero.on_attach(function(client, bufnr)
       -- make sure you use clients with formatting capabilities
@@ -21,7 +21,7 @@ return {
         lsp_format.on_attach(client)
       end
 
-      lsp_signature.on_attach({}, bufnr)
+      -- lsp_signature.on_attach({}, bufnr)
 
       vim.keymap.set("n", "K", function()
         vim.lsp.buf.hover()

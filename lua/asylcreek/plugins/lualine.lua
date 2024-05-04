@@ -16,11 +16,16 @@ return {
       cond = conditions.buffer_not_empty_and_not_terminal,
     }
 
+    local recording = {
+      require("noice").api.status.mode.get,
+      cond = require("noice").api.status.mode.has,
+    }
+
     lualine.setup({
       options = {
         component_separators = "",
         section_separators = { left = "", right = "" },
-        theme = "ayu",
+        theme = "terafox",
       },
       tabline = {
         lualine_a = { "mode" },
@@ -32,6 +37,7 @@ return {
             sources = { "nvim_diagnostic", "nvim_lsp" },
             symbols = { error = " ", warn = " ", info = " " },
           },
+          recording,
         },
         lualine_c = {
           "%=",
