@@ -1,22 +1,28 @@
 return {
-  "numToStr/Comment.nvim",
-  event = "VeryLazy",
-  config = function()
-    local comment = require("Comment")
+	"echasnovski/mini.comment",
+	version = "*",
+	event = "VeryLazy",
+	dependencies = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
+	},
+	config = function()
+		require("ts_context_commentstring").setup()
 
-    comment.setup()
+		local comment = require("mini.comment")
 
-    vim.keymap.set("n", "<leader>/", function()
-      require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
-    end, { desc = "Toggle linewise comment" })
-
-    vim.keymap.set(
-      "v",
-      "<leader>/",
-      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
-      { desc = "Toggle comment for selection" }
-    )
-
-    return vim
-  end,
+		comment.setup({
+			options = {
+				custom_commentstring = function()
+					return require("ts_context_commentstring.internal").calculate_commentstring()
+						or vim.bo.commentstring
+				end,
+			},
+			mappings = {
+				comment = "<leader>/",
+				comment_line = "<leader>/",
+				comment_visual = "<leader>/",
+				textobject = "<leader>/",
+			},
+		})
+	end,
 }
