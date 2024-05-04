@@ -2,6 +2,7 @@ return {
   "SmiteshP/nvim-navic",
   dependencies = "neovim/nvim-lspconfig",
   event = "VeryLazy",
+  enabled = false,
   config = function()
     require("nvim-navic").setup({
       icons = {
