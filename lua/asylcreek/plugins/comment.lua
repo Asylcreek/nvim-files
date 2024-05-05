@@ -18,7 +18,7 @@ return {
 				end,
 			},
 			mappings = {
-				comment = "<leader>/",
+				comment = "gc",
 				comment_line = "<leader>/",
 				comment_visual = "<leader>/",
 				textobject = "<leader>/",
