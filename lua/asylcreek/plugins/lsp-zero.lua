@@ -18,7 +18,7 @@ return {
       -- make sure you use clients with formatting capabilities
       -- otherwise you'll get a warning message
       if client.supports_method("textDocument/formatting") then
-        lsp_format.on_attach(client)
+        -- lsp_format.on_attach(client)
       end
 
       -- lsp_signature.on_attach({}, bufnr)
@@ -52,12 +52,12 @@ return {
 
     lsp_zero.setup()
 
-    lsp_zero.format_on_save({
-      format_opts = {
-        async = false,
-        timeout_ms = 1000,
-      },
-    })
+    -- lsp_zero.format_on_save({
+    --   format_opts = {
+    --     async = false,
+    --     timeout_ms = 1000,
+    --   },
+    -- })
 
     lsp_zero.set_server_config({
       capabilities = {
