@@ -12,6 +12,7 @@ return {
 			"tsx",
 			"svelte",
 			"css",
+			"scss",
 			"html",
 			"json",
 			"markdown",
@@ -19,7 +20,7 @@ return {
 
 		local formatters = {
 			lua = { "stylua" },
-			yaml = { "yamlfmt", "yamlfix" },
+			yaml = { "yamlfix" },
 			go = { "goimports", "gofmt", "goimports-reviser" },
 		}
 

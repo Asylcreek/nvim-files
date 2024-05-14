@@ -8,6 +8,7 @@ return {
 			go = { "golangci-lint" },
 			markdown = { "vale" },
 			lua = {},
+			yaml = { "yamllint" },
 		}
 
 		local eslintFts = { "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte" }
