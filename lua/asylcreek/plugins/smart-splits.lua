@@ -30,7 +30,7 @@ return {
 		vim.keymap.set(
 			{ "n", "v" },
 			"<leader>sm",
-			"<cmd>MaximizerToggle<CR>",
+			"<cmd>MaximizerToggle!<CR>",
 			{ desc = "Toggle maximize current split" }
 		)
 
