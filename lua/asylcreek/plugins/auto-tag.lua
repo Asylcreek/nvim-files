@@ -1,7 +1,10 @@
-local filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'html', 'xml', 'svelte' }
-
 return {
-  'windwp/nvim-ts-autotag',
-  opts = {},
-  ft = filetypes
+	"windwp/nvim-ts-autotag",
+	opts = {
+		enable = true,
+		enable_rename = true,
+		enable_close = true,
+		enable_close_on_slash = true,
+	},
+	event = { "BufReadPre", "BufNewFile" },
 }

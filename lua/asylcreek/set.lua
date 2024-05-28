@@ -14,6 +14,7 @@ vim.opt.showmode = false
 
 vim.opt.smartindent = true
 vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
