@@ -9,7 +9,7 @@ return {
 		harpoon:setup({ settings = { sync_on_ui_close = true } })
 
 		vim.keymap.set("n", "<leader>ha", function()
-			harpoon:list():append()
+			harpoon:list():add()
 		end, { desc = "Add file to harpoon" })
 		vim.keymap.set("n", "<leader>he", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
