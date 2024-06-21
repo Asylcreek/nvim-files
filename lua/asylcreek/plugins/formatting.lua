@@ -20,7 +20,7 @@ return {
 
 		local formatters = {
 			lua = { "stylua" },
-			yaml = { "yamlfix" },
+			yaml = { "yamlfix", "yamlfmt" },
 			go = { "goimports", "gofmt", "goimports-reviser" },
 		}
 
