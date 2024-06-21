@@ -8,7 +8,7 @@ return {
 		-- Lua
 		vim.keymap.set(
 			"n",
-			"<leader>xx",
+			"<leader>xd",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			{ desc = "Open current buffer diagnostics with Trouble" }
 		)
@@ -24,7 +24,7 @@ return {
 			"n",
 			"<leader>xs",
 			"<cmd>Trouble symbols toggle focus=true<cr>",
-			{ desc = "Open document diagnostics with Trouble" }
+			{ desc = "Open document symbols with Trouble" }
 		)
 
 		vim.keymap.set(
