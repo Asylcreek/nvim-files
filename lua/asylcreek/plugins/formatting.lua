@@ -22,6 +22,8 @@ return {
 			lua = { "stylua" },
 			yaml = { "yamlfix", "yamlfmt" },
 			go = { "goimports", "gofmt", "goimports-reviser" },
+			nix = { "nixpkgs-fmt", "nil" },
+			c = { "clang-format" },
 		}
 
 		for _, v in ipairs(prettierFts) do
