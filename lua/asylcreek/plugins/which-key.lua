@@ -1,57 +1,35 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
-  config = function()
-    local wk = require("which-key")
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
+	end,
+	config = function()
+		local wk = require("which-key")
 
-    wk.setup({ window = { position = "top" } })
+		wk.setup({ preset = "modern", win = {} })
 
-    wk.register({
-      f = { name = "Find" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>f", group = "Find" } })
 
-    wk.register({
-      b = { name = "Buffers" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>b", group = "Buffers" } })
 
-    wk.register({
-      g = { name = "Git" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>g", group = "Git" } })
 
-    wk.register({
-      h = { name = "Harpoon" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>h", group = "Harpoon" } })
 
-    wk.register({
-      r = { name = "Resession" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>r", group = "Resession" } })
 
-    wk.register({
-      l = { name = "LSP" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>l", group = "LSP" } })
 
-    wk.register({
-      x = { name = "Trouble" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>x", group = "Trouble" } })
 
-    wk.register({
-      d = { name = "Diagnostics" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>d", group = "Diagnostics" } })
 
-    wk.register({
-      o = { name = "Octo" },
-    }, { mode = "n", prefix = "<leader>" })
+		wk.add({ { "<leader>o", group = "Octo" } })
 
-    wk.register({
-      r = { name = "Reviews" },
-    }, { mode = "n", prefix = "<leader>o" })
+		wk.add({ { "<leader>or", group = "Octo Reviews" } })
 
-    wk.register({
-      s = { name = "Start/Submit" },
-    }, { mode = "n", prefix = "<leader>or" })
-  end,
+		wk.add({ { "<leader>ors", group = "Octo Reviews Start/Submit" } })
+	end,
 }
