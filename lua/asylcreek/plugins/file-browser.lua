@@ -1,36 +1,18 @@
 return {
-  "echasnovski/mini.files",
-  version = "*",
-  config = function()
-    local minifiles = require("mini.files")
-    local miniUtils = require("asylcreek.utils.minifiles")
+	"mikavilpas/yazi.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	event = "VeryLazy",
+	config = function()
+		local yazi = require("yazi")
 
-    minifiles.setup({
-      content = {
-        sort = miniUtils.filter_hidden,
-      },
-      mappings = {
-        synchronize = "<leader>w",
-        go_in_plus = "l",
-        go_in = "L",
-      },
-      windows = {
-        preview = true,
-        width_preview = 120,
-      },
-    })
+		yazi.setup({
+			open_for_directories = false,
+		})
 
-    vim.keymap.set("n", "<leader>pf", function()
-      if vim.bo.ft == "minifiles" then
-        minifiles.close()
-      else
-        local file = vim.api.nvim_buf_get_name(0)
-        local file_exists = vim.fn.filereadable(file) ~= 0
-        minifiles.open(file_exists and file or nil)
-        minifiles.reveal_cwd()
-      end
-    end, { desc = "Open file browser" })
-
-    return vim
-  end,
+		vim.keymap.set("n", "<leader>pf", function()
+			yazi.yazi()
+		end, { desc = "Open file browser" })
+	end,
 }

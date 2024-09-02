@@ -1,5 +1,4 @@
 require("asylcreek.autocmds.resession")
-require("asylcreek.autocmds.minifiles")
 require("asylcreek.autocmds.terraform")
 require("asylcreek.autocmds.docker")
 
