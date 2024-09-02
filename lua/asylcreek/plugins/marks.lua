@@ -1,44 +1,40 @@
 return {
-	"chentoast/marks.nvim",
+	"fnune/recall.nvim",
 	event = "VeryLazy",
 	config = function()
-		local marks = require("marks")
+		local recall = require("recall")
 
-		marks.setup({ default_mappings = false, mappings = {
-			set = false,
-		} })
+		recall.setup({
+			sign = "",
+			sign_highlight = "@comment.note",
 
-		vim.keymap.set("n", "<leader>ma", function()
-			marks.set_next()
-		end, { desc = "Set next available lowercase mark at cursor" })
+			telescope = {
+				autoload = true,
+				mappings = {
+					unmark_selected_entry = {
+						normal = "dd",
+						insert = "<M-d>",
+					},
+				},
+			},
 
-		vim.keymap.set("n", "<leader>mk", function()
-			marks.prev()
-		end, { desc = "Move to previous mark" })
+			wshada = vim.fn.has("nvim-0.10") == 0,
+		})
 
-		vim.keymap.set("n", "<leader>ml", function()
-			marks.next()
-		end, { desc = "Move to next mark" })
-
-		vim.keymap.set("n", "<leader>md", function()
-			marks.delete_line()
-		end, { desc = "Delete all marks on current line" })
-
-		vim.keymap.set("n", "<leader>mD", function()
-			marks.delete_buf()
-		end, { desc = "Delete all marks in current buffer" })
-
-		vim.keymap.set("n", "<leader>mP", function()
-			marks.preview()
-		end, { desc = "Preview mark (type mark immediately after or press enter)" })
-
+		vim.keymap.set("n", "<leader>mm", recall.toggle, { noremap = true, silent = true, desc = "Toggle mark" })
+		vim.keymap.set("n", "<leader>mn", recall.goto_next, { noremap = true, silent = true, desc = "Go to next mark" })
 		vim.keymap.set(
 			"n",
-			"<leader>ms",
-			"<cmd>MarksListBuf<cr>",
-			{ desc = "List marks in current buffer in location list" }
+			"<leader>mp",
+			recall.goto_prev,
+			{ noremap = true, silent = true, desc = "Go to previous mark" }
 		)
-
-		vim.keymap.set("n", "<leader>mS", "<cmd>MarksQFListAll<cr>", { desc = "List all marks in qflist" })
+		vim.keymap.set("n", "<leader>mc", recall.clear, { noremap = true, silent = true, desc = "Clear mark" })
+		vim.keymap.set(
+			"n",
+			"<leader>ml",
+			":Telescope recall<CR>",
+			{ noremap = true, silent = true, desc = "Show marks in Telescope" }
+		)
 	end,
 }
