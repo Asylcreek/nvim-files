@@ -22,7 +22,7 @@ return {
 			lua = { "stylua" },
 			yaml = { "yamlfix", "yamlfmt" },
 			go = { "goimports", "gofmt", "goimports-reviser" },
-			nix = { "nixpkgs-fmt", "nil" },
+			nix = { "rnix", "nixpkgs-fmt" },
 			c = { "clang-format" },
 		}
 
