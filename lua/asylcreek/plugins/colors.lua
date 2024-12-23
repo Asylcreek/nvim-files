@@ -68,4 +68,27 @@ return {
 			})
 		end,
 	},
+	{
+		"savq/melange-nvim",
+		lazy = "VeryLazy",
+	},
+	{
+		"navarasu/onedark.nvim",
+		lazy = "VeryLazy",
+		config = function()
+			require("onedark").setup({
+				style = "darker",
+				transparent = true,
+				code_style = {
+					comments = "italic",
+					keywords = "italic",
+					functions = "italic",
+					strings = "italic",
+				},
+				diagnostics = {
+					background = false,
+				},
+			})
+		end,
+	},
 }
