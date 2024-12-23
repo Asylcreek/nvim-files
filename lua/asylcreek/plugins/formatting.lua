@@ -21,7 +21,7 @@ return {
 		local formatters = {
 			lua = { "stylua" },
 			yaml = { "yamlfix", "yamlfmt" },
-			go = { "goimports", "gofmt", "goimports-reviser" },
+			go = { "goimports", "gofmt", "goimports-reviser", "gopls" },
 			nix = { "rnix", "nixpkgs-fmt" },
 			c = { "clang-format" },
 		}

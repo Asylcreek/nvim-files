@@ -5,10 +5,11 @@ return {
 		local lint = require("lint")
 
 		local linters = {
-			go = { "golangci-lint" },
+			go = { "golangcilint" },
 			markdown = { "vale" },
 			lua = {},
 			yaml = { "yamllint" },
+			nix = { "nix" },
 		}
 
 		local eslintFts = { "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte" }
